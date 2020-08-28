@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Merge, Join and Concatenate
+
+# # How to  perform a merge operation between two operations
+
+# In[5]:
+
+
+import pandas as pd
+player =['Player1', 'Player2', 'Player3']
+point = [8,9,6]
+title=['Game1', 'Game2', 'Game3']
+df1=pd.DataFrame({'Player':player, 'Points': point, 'Title':title})
+df1
+
+
+# In[7]:
+
+
+player=['Player1', 'Player5', 'Player6']
+power= ['Punch', 'Kick', 'Elbow']
+title=['Game1', 'Game5', 'Game6']
+df2 = pd.DataFrame({'player':player, 'Power':power, 'Title':title})
+df2
+
+
+# # inner merge
+
+# In[8]:
+
+
+df1.merge(df2, on='Title', how= 'inner')
+
+
+# # Left Merge
+
+# In[14]:
+
+
+df1.merge(df2, on='Title',how= 'left')
+
+
+# # Right Merge
+
+# In[15]:
+
+
+df1.merge(df2, on='Title',how= 'right')
+
+
+# In[16]:
+
+
+# outer merge
+df1.merge(df2, on='Title',how= 'outer')
+
+
+# In[ ]:
+
+
+
+
